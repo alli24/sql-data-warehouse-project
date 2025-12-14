@@ -133,6 +133,6 @@ You are free to use, modify, and share this project.
 
 ## 🌟 About Me
 
-**Name:** [Your Name Here]
+**Name:**Ali Mohammed
 **Role:** Beginner in Data Engineering & SQL
 **Project:** This is my first practical project in the field, created for learning and portfolio purposes.
