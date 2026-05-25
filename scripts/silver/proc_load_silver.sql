@@ -65,8 +65,10 @@ BEGIN
         SELECT 
               cst_id,
               cst_key,
+            -- Remove Unwanted Spaces
               TRIM(cst_firstname),
               TRIM(cst_lastname),
+          -- Data Normalization & Standardization & Handling Missing Data
               CASE 
                   WHEN UPPER(TRIM(cst_marital_status)) = 'S' THEN 'Single'
                   WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Maarried'
@@ -78,6 +80,7 @@ BEGIN
                   ELSE 'n/a'
               END,
               cst_create_date
+            -- Remove Duplicates
         FROM (
             SELECT *,
                    ROW_NUMBER() OVER (PARTITION BY cst_id ORDER BY cst_create_date) AS flag_last
